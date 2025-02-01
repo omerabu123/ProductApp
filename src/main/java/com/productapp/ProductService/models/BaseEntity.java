@@ -43,9 +43,8 @@ public abstract class BaseEntity implements Serializable {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof BaseEntity)) return false;
+        if (!(o instanceof BaseEntity that)) return false;
         if (!super.equals(o)) return false;
-        BaseEntity that = (BaseEntity) o;
         return createdBy.equals(that.createdBy) &&
                 updatedBy.equals(that.updatedBy) &&
                 createdAt.equals(that.createdAt) &&

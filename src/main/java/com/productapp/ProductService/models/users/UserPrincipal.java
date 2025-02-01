@@ -1,5 +1,6 @@
 package com.productapp.ProductService.models.users;
 
+import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -7,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.Collections;
 
+@Getter
 public class UserPrincipal implements UserDetails {
 
     User user;
@@ -17,7 +19,7 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singleton(new SimpleGrantedAuthority("USER"));
+        return Collections.singleton(user.getRole());
     }
 
     @Override
@@ -31,7 +33,4 @@ public class UserPrincipal implements UserDetails {
     }
 
 
-    public User getUser() {
-        return user;
-    }
 }

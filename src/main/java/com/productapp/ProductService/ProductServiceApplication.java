@@ -18,7 +18,6 @@ public class ProductServiceApplication {
 		CurrencyDAO currencyDAO = ctx.getBean(CurrencyDAO.class);
 		currencyDAO.add(Currency.builder().name("Euro").symbol("EUR").build());
 		System.out.println(userDAO.findByUserName("admin"));
-
 	}
 
 }

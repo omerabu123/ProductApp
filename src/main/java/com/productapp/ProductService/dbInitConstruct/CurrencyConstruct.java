@@ -30,7 +30,11 @@ public class CurrencyConstruct {
                 .name("Israeli Shekel")
                 .symbol("ILS")
                 .build();
-        List.of(usd,ils).forEach(currency -> currencyDB.add(currency));
+        Currency eur = Currency.builder()
+                .name("Euro")
+                .symbol("EUR")
+                .build();
+        List.of(usd,ils,eur).forEach(currency -> currencyDB.add(currency));
     }
 
 }

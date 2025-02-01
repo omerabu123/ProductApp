@@ -18,10 +18,13 @@ public class User {
     private String userName;
     @Column(nullable = false)
     private String password;
+    @ManyToOne
+    private Role role;
 
-    public User(String userName,String password){
+    public User(String userName,String password,Role role){
         this.userName=userName;
         this.password=password;
+        this.role=role;
     }
 
 }
